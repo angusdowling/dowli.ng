@@ -1,0 +1,18 @@
+{
+  "id": "pageBlogArticle",
+  "name": "Blog Article",
+  "description": "Blog article page template",
+  "displayField": "name",
+  "fields": [
+    {
+      "id": "name",
+      "name": "Internal Name",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ]
+}
