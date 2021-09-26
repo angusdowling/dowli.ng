@@ -17,6 +17,16 @@ import { CustomContentType } from "../../types/model.types"
 
 config()
 
+/**
+ * Note: contentful-management package currently does not support adjusting
+ * "relationshipType" validation rules. These rules are used by the Compose
+ * plugin. Currently I have temporarily removed these validation rules from
+ * the JSON files.
+ *
+ * TECH DEBT: When contentful-management fixes this issue, we can re-add
+ * these validation rules.
+ */
+
 const migrate = () => {
   const client = contentful.createClient({
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!
