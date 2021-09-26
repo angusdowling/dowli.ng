@@ -1,0 +1,19 @@
+{
+  "name": "portfolio.functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "contentful:update-content-models": "cross-env CONTENTFUL_ENV=dev node --experimental-json-modules --loader ts-node/esm ./contentful/scripts/migrate/migrate.ts"
+  },
+  "devDependencies": {
+    "contentful-management": "^7.39.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "4.4.3"
+  }
+}
