@@ -1,0 +1,82 @@
+{
+  "id": "page",
+  "name": "Compose: Page",
+  "description": "Represents a web page in Compose. DO NOT DELETE",
+  "displayField": "name",
+  "fields": [
+    {
+      "id": "name",
+      "name": "Internal name",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "title",
+      "name": "Page title",
+      "type": "Symbol",
+      "localized": true,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": true,
+      "required": true,
+      "validations": [
+        {
+          "unique": true
+        },
+        {
+          "regexp": {
+            "pattern": "^((\\/)|(([\\/\\w\\-\\._~:!$&'\\(\\)*+,;@]|(%\\d+))+))$"
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "seo",
+      "name": "SEO metadata",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": ["seo"]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "content",
+      "name": "Content",
+      "type": "Link",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "linkContentType": [
+            "page_landing",
+            "page_help_center_article",
+            "pageBlogArticle",
+            "pageStandard"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "pageStandard",
+  "name": "Standard",
+  "description": "Standard page template, for generic use. Comes with site navigation.",
+  "displayField": "name",
+  "fields": [
+    {
+      "id": "name",
+      "name": "Internal Name",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ]
+}

@@ -1,12 +1,14 @@
 {
-  "name": "site",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "contentful:update-content-models": "cross-env CONTENTFUL_ENV=dev node --experimental-json-modules --loader ts-node/esm ./services/contentful/scripts/migrate/migrate.ts"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -14,9 +16,16 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/async": "^3.2.8",
     "@types/react": "17.0.24",
+    "contentful-management": "^7.39.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.4.1",
+    "ts-node": "^10.2.1",
     "typescript": "4.4.3"
   }
 }

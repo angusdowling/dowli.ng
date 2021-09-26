@@ -1,0 +1,72 @@
+{
+  "id": "seo",
+  "name": "Compose: SEO",
+  "description": "SEO Metadata for web pages in Compose. DO NOT DELETE",
+  "displayField": "name",
+  "fields": [
+    {
+      "id": "name",
+      "name": "Internal name",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "title",
+      "name": "SEO title",
+      "type": "Symbol",
+      "localized": true,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "type": "Symbol",
+      "localized": true,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "keywords",
+      "name": "Keywords",
+      "type": "Array",
+      "localized": true,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Symbol",
+        "validations": []
+      }
+    },
+    {
+      "id": "no_index",
+      "name": "Hide page from search engines (noindex)",
+      "type": "Boolean",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "no_follow",
+      "name": "Exclude links from search rankings? (nofollow)",
+      "type": "Boolean",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ]
+}
