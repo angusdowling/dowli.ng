@@ -8,14 +8,13 @@ import {
 } from "contentful-management/dist/typings/export-types"
 import { config } from "dotenv"
 import contentful from "contentful-management"
-import pageModel from "../../models/page.json"
-import seoModel from "../../models/seo.json"
-import standardPageModel from "../../models/standardPage.json"
-import blogArticlePageModel from "../../models/blogArticlePage.json"
+import pageModel from "../../models/page/page.model.json"
+import pageStandardModel from "../../models/pageStandard/pageStandard.model.json"
+import pageBlogArticleModel from "../../models/pageBlogArticle/pageBlogArticle.model.json"
+import seoModel from "../../models/seo/seo.model.json"
 import { CreateOrUpdateContentTypeInterface } from "./migrate.types"
-import { CustomContentType } from "../../types/model.types"
 
-config()
+config({ path: "../../../.env" })
 
 /**
  * Note: contentful-management package currently does not support adjusting
@@ -29,7 +28,7 @@ config()
 
 const migrate = () => {
   const client = contentful.createClient({
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!
+    accessToken: process.env.CONTENTFUL_MANAGEMENT_ACCESS_TOKEN!
   })
 
   /**
@@ -267,14 +266,14 @@ const migrate = () => {
     const models = [
       pageModel,
       seoModel,
-      standardPageModel,
-      blogArticlePageModel
-    ] as CustomContentType[]
+      pageStandardModel,
+      pageBlogArticleModel
+    ] as Array<ContentType & { id: string }>
 
     for (const { id, ...data } of models) {
       await createOrUpdateContentType({
         spaceId: process.env.CONTENTFUL_SPACE_ID!,
-        environmentId: process.env.CONTENTFUL_ENV!,
+        environmentId: process.env.CONTENTFUL_ENVIRONMENT!,
         contentTypeId: id,
         data: data
       })
@@ -284,12 +283,12 @@ const migrate = () => {
   processModels()
 }
 
-if (!process.env.CONTENTFUL_ACCESS_TOKEN) {
-  console.error("CONTENTFUL_ACCESS_TOKEN not defined.")
+if (!process.env.CONTENTFUL_MANAGEMENT_ACCESS_TOKEN) {
+  console.error("CONTENTFUL_MANAGEMENT_ACCESS_TOKEN not defined.")
 } else if (!process.env.CONTENTFUL_SPACE_ID) {
   console.error("CONTENTFUL_SPACE_ID not defined.")
-} else if (!process.env.CONTENTFUL_ENV) {
-  console.error("CONTENTFUL_ENV not defined.")
+} else if (!process.env.CONTENTFUL_ENVIRONMENT) {
+  console.error("CONTENTFUL_ENVIRONMENT not defined.")
 } else {
   migrate()
 }
