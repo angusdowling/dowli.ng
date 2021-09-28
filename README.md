@@ -2,4 +2,4 @@
 
 ## Architecture Diagram
 
-![Architecture Diagram](https://m5aq9e1vfc.execute-api.ap-southeast-2.amazonaws.com/prod)
+![Architecture Diagram](https://lucid.app/publicSegments/view/9edeb197-3f2c-48ff-aeb4-0eab2076e55a/image.png)
